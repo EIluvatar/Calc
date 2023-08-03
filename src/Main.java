@@ -16,9 +16,9 @@ class Calc {
         String result;
         boolean rim;
         String[] operands = expression.split("[*/+-]");
-        if (operands.length != 2) throw new Exception("Больше 2 чисел!");
+        if (operands.length > 2) throw new Exception("Больше 2 чисел!");
         oper = detectOperation(expression);
-        if (oper == null) throw new Exception("Действие невыполнимо!");
+        if (oper == null) throw new Exception("Строка не является математической операцией!");
         if (Rome.rim(operands[0]) && Rome.rim(operands[1])) {
             x = Rome.convarab(operands[0]);
             y = Rome.convarab(operands[1]);
